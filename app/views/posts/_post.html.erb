@@ -1,0 +1,8 @@
+<div class="box">
+  <div class="normal">
+    <h2><%= post.title %></h2>
+    <p><%= post.text %></p>
+    <a href="/posts/<%=post.id%>">Comment</a> 
+    <span class="float_r time">posted at <%= post.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ") %> by Patrick</span>
+  </div>
+</div>

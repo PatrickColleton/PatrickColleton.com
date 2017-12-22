@@ -1,0 +1,17 @@
+<%= form_with model: @post, local: true do |form| %>
+
+  <div class="form-field"><br>
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title, size: 50 %>
+  </div>
+  <div class="form-field large_text">
+    <%= form.label :text %>
+    <br>
+    <%= form.text_area :text, size: '100x12' %>
+  </div>
+  <div class="form-field">
+    <%= form.submit %>
+  </div>
+
+<% end %>

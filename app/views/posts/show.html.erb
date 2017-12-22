@@ -1,0 +1,22 @@
+<div class="grid-item-3 center">
+<%= render 'post', post: @post %>
+<br>
+<% if current_user.access_level == 'admin' %>
+  <%= link_to "Cancel", posts_path %>
+  <%= link_to "Edit Post", edit_post_path(@post) %>
+  <%= link_to "Delete", @post, :method => :destroy %>
+<% end %>
+<div class="grid-item-6">
+  <h2>Comments</h2>
+  <a href="/posts/<%=@post.id%>/comments/new"><button type="button" name="button">New Comment</button></a>
+  <% @post.comments.each do |comment| %>
+    <div class="box">
+      <div class="normal">
+        <p><%= comment.text %></p>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+</div>
